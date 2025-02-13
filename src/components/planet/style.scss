@@ -1,0 +1,53 @@
+.planet{
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    background: #ffefa5;
+    position: absolute;
+    top: 86px;
+    animation: sunrise 2.5s ease-out;
+    -webkit-box-shadow: 1px 1px 67px 41px rgba(255,  203,  62, 0.22);
+    -moz-box-shadow: 1px 1px 67px 41px rgba(255,  203,  62, 0.22);
+    box-shadow: 1px 1px 67px 41px rgba(255,  203,  62, 0.22);
+    transition: 2s ease;
+    right: 86svw;
+}
+
+.moon{
+    background: #DDECFF;
+    animation: moon 2.5s ease-in-out;
+    right: 86px;
+    -webkit-box-shadow: 1px 1px 67px 41px rgba(221, 236, 255, 0.22);
+    -moz-box-shadow: 1px 1px 67px 41px rgba(221, 236, 255, 0.22);
+    box-shadow: 1px 1px 67px 41px rgba(221, 236, 255, 0.22);
+}
+
+@keyframes sunrise {
+    0%{top: 100vh ; opacity: 0;}
+    100%{top: 86px; opacity: 1;}
+}
+@keyframes moon {
+    0%{background: #ffefa5; right:86svw; opacity: 0;}
+    100%{background: #DDECFF; right:86px; opacity: 1;}
+}
+
+@media (max-width: 600px) {
+    .planet{
+        transform: scale(0.7);
+        top: 32px;
+        right: 62svw;
+    }
+    .moon{
+        transform: scale(0.7);
+        top: 32px;
+        right: 32px;
+    }
+    @keyframes sunrise {
+        0%{top: 100vh ; opacity: 0;}
+        100%{top: 32px; opacity: 1;}
+    }
+    @keyframes moon {
+        0%{background: #ffefa5; right:62svw; opacity: 0;}
+        100%{background: #DDECFF; right:32px; opacity: 1;}
+    }
+}

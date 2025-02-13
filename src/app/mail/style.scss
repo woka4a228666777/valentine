@@ -1,0 +1,46 @@
+body{
+    padding: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+html{
+    overflow-y: scroll !important;
+}
+
+.mail{
+    max-width: 811px;
+    width: 100%;
+    background: #F2EFE9;
+    min-height: 200px;
+    border-radius: 4px;
+    color: #0A0A0A;
+    padding: 46px 23px;
+
+    h1{
+        font-size: 18px;
+        font-weight: 500;
+    }
+    h2{
+        font-size: 17px;
+        font-weight: 400;
+    }
+
+    p{
+        font-size: 15px;
+        font-weight: 400;
+        line-height: 150%;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+    .content{
+        margin-top: 21px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        margin-bottom: 60px;
+    }
+}

@@ -1,0 +1,152 @@
+.morning_cont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100%;
+}
+  
+.text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+  color: #0a0a0a;
+  font-weight: 800;
+  font-size: 25px;
+  text-align: center;
+
+  .messages {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    color: #0a0a0a;
+    font-weight: 400;
+    font-size: 20px;
+  }
+
+  h1, p {
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 0 auto;
+    width: 0;
+    position: relative;
+  }
+
+  h1 {
+    animation: typing 2s steps(40, end) forwards;
+    &::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background: black;
+      animation: blink-caret 0.75s step-end infinite, fade-out-caret 0.2s ease-out 2s forwards;
+    }
+  }
+
+  .messages p {
+    animation: typing 2s steps(50, end) forwards;
+    &::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background: black;
+      animation: blink-caret 0.75s step-end infinite, fade-out-caret 0.2s ease-out 2s forwards;
+    }
+  }
+
+  .messages p:nth-child(1) {
+    animation-delay: 2s;
+    max-width: 326px;
+    &::after {
+      animation-delay: 2s, 4s;
+    }
+  }
+
+  .messages p:nth-child(2) {
+    animation-delay: 4s;
+    max-width: 408px;
+    &::after {
+      animation-delay: 4s, 999999s;
+    }
+  }
+
+  span {
+    color: #f7bc1c !important;
+    font-weight: 800;
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out-caret {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .text {
+    transform: scale(0.7);
+  }
+}
+
+.next_btn{
+  padding: 8px;
+  max-width: 120px;
+  width: 100%;
+  background: none;
+  border: 2px #f7bc1c solid;
+  border-radius: 100px;
+  margin-top: 32px;
+  font-size: 16px;
+  color: #f7bc1c;
+  text-transform: lowercase;
+  font-weight: 500;
+  cursor: pointer;
+  letter-spacing: 2px;
+  transition: 0.15s ease;
+  animation: btn_next 7s ease-in-out;
+  &:hover{
+    transform: scale(1.02);
+  }
+  &:active{
+    transform: scale(0.98);
+  }
+
+  @keyframes btn_next {
+    0%{opacity: 0; display: none;}
+    80%{opacity: 0; display: none;}
+    100%{opacity: 1; display: block;}
+  }
+}
